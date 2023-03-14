@@ -7,4 +7,4 @@ input file
 output file
 sorting method
 time output file
-loop count
+numbers sorted
