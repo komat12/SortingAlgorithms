@@ -4,6 +4,8 @@
 #include <chrono>
 #pragma once
 
+void quick_sort(int*, int, int);
+
 class Object
 {
 private:
@@ -19,7 +21,9 @@ public:
 
 	void input();
 
-	void solve();
+	void solve_bouble();
+
+	void solve_quick();
 
 	void save();
 

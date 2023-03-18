@@ -7,6 +7,7 @@ int main()
 
     order.configuration();
     order.input();
-    order.solve();
+    //order.solve_bouble();
+    order.solve_quick();
     order.save();
 }

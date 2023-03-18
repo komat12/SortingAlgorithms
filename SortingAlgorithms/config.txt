@@ -2,7 +2,7 @@ liczby.txt
 output.txt
 boublesort
 timeoutput.txt
-100000
+1000000
 input file
 output file
 sorting method

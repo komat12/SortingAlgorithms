@@ -4,6 +4,34 @@
 #include <chrono>
 #include "class.h"
 
+void quick_sort(int* tab, int left, int right)
+{
+    //std::cout << "Sorting" << std::endl;
+    if (right <= left) return;
+
+    int i = left - 1, j = right + 1,
+        pivot = tab[(left + right) / 2]; //wybieramy punkt odniesienia
+
+    while (1)
+    {
+        while (pivot > tab[++i]);
+        {
+
+            while (pivot < tab[--j]);
+            {
+                if (i <= j) std::swap(tab[i], tab[j]);
+                else
+                    break;
+            }
+        }
+    }
+
+    if (j > left)
+        quick_sort(tab, left, j);
+    if (i < right)
+        quick_sort(tab, i, right);
+}
+
 void Object::configuration()
 {
     std::fstream file;
@@ -41,7 +69,7 @@ void Object::input()
     in.close();
 }
 
-void Object::solve()
+void Object::solve_bouble()
 {
     //sortowanie malej¹co
 
@@ -69,6 +97,11 @@ void Object::solve()
 
     auto finish = std::chrono::high_resolution_clock::now();
     time = std::chrono::duration_cast<std::chrono::nanoseconds>(finish - start);
+}
+
+void Object::solve_quick()
+{
+    quick_sort(numbers, 0, length - 1);
 }
 
 void Object::save()
