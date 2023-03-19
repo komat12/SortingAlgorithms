@@ -6,11 +6,10 @@
 
 void quick_sort(int* tab, int left, int right)
 {
-    //std::cout << "Sorting" << std::endl;
     if (right <= left) return;
 
     int i = left - 1, j = right + 1,
-        pivot = tab[(left + right) / 2]; //wybieramy punkt odniesienia
+        pivot = tab[(left + right) / 2];
 
     while (1)
     {
@@ -71,8 +70,6 @@ void Object::input()
 
 void Object::solve_bouble()
 {
-    //sortowanie malej¹co
-
     auto start = std::chrono::high_resolution_clock::now();
 
     int buffer = 0;
@@ -96,12 +93,19 @@ void Object::solve_bouble()
     }
 
     auto finish = std::chrono::high_resolution_clock::now();
-    time = std::chrono::duration_cast<std::chrono::nanoseconds>(finish - start);
+    time[time_loop_count] = std::chrono::duration_cast<std::chrono::nanoseconds>(finish - start);
+    time_loop_count++;
 }
 
 void Object::solve_quick()
 {
+    auto start = std::chrono::high_resolution_clock::now();
+
     quick_sort(numbers, 0, length - 1);
+
+    auto finish = std::chrono::high_resolution_clock::now();
+    time[time_loop_count] = std::chrono::duration_cast<std::chrono::nanoseconds>(finish - start);
+    time_loop_count++;
 }
 
 void Object::save()
@@ -119,4 +123,24 @@ void Object::save()
     out.close();
 
     std::cout << "Succesfully saved" << std::endl;
+}
+
+int Object::loop_count()
+{
+    return stoi(config[2]);
+}
+
+void Object::save_time()
+{
+    std::fstream out;
+
+    out.open(config[3], std::ios::out);
+
+    for (int i = 0; i < 10; i++)
+    {
+        out << i+1 << " loop took: " << time[i].count()/1e9;
+        out << std::endl;
+    }
+
+    out.close();
 }

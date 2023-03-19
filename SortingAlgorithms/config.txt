@@ -1,10 +1,10 @@
 liczby.txt
 output.txt
-boublesort
+5
 timeoutput.txt
-1000000
+20000
 input file
 output file
-sorting method
+loop count (max 10)
 time output file
 numbers sorted

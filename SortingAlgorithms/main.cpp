@@ -6,8 +6,12 @@ int main()
     Object order;
 
     order.configuration();
-    order.input();
-    //order.solve_bouble();
-    order.solve_quick();
-    order.save();
+    for (int i = 0; i < order.loop_count(); i++)
+    {
+        order.input();
+        order.solve_bouble();
+        //order.solve_quick();
+        order.save();
+    }
+    order.save_time();
 }
