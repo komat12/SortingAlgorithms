@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <chrono>
+#include <vector>
 #pragma once
 
 void quick_sort(int*, int, int);
@@ -25,6 +26,8 @@ public:
 	void solve_bouble();
 
 	void solve_quick();
+
+	void solve_insanity();
 
 	void save();
 

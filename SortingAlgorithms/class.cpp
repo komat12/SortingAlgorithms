@@ -108,6 +108,20 @@ void Object::solve_quick()
     time_loop_count++;
 }
 
+void Object::solve_insanity() 
+{
+    int dl = 129995;
+    int* zlicz = new int[dl];
+    for (int i = 0; i < dl; i++)
+        zlicz[i] = 0;
+    for (int i = 0; i < length; i++)
+        zlicz[numbers[i] + 64997]++;
+    int x = 0;
+    for (int i = 0; i < dl; i++)
+        for (int j = 0; j < zlicz[i]; j++)
+            numbers[x++] = i - 64997;
+}
+
 void Object::save()
 {
     std::fstream out;
