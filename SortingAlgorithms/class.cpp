@@ -108,8 +108,9 @@ void Object::solve_quick()
     time_loop_count++;
 }
 
-void Object::solve_insanity() 
+void Object::solve_count() 
 {
+    auto start = std::chrono::high_resolution_clock::now();
     int dl = 129995;
     int* zlicz = new int[dl];
     for (int i = 0; i < dl; i++)
@@ -120,6 +121,10 @@ void Object::solve_insanity()
     for (int i = 0; i < dl; i++)
         for (int j = 0; j < zlicz[i]; j++)
             numbers[x++] = i - 64997;
+
+    auto finish = std::chrono::high_resolution_clock::now();
+    time[time_loop_count] = std::chrono::duration_cast<std::chrono::nanoseconds>(finish - start);
+    time_loop_count++;
 }
 
 void Object::save()

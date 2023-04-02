@@ -27,7 +27,7 @@ public:
 
 	void solve_quick();
 
-	void solve_insanity();
+	void solve_count();
 
 	void save();
 

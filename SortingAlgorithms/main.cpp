@@ -11,7 +11,7 @@ int main()
         order.input();
         //order.solve_bouble();
         //order.solve_quick();
-        order.solve_insanity();
+        order.solve_count();
         order.save();
     }
     order.save_time();
