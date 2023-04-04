@@ -14,7 +14,7 @@ private:
 	int* numbers;
 	int time_loop_count = 0;
 	std::chrono::nanoseconds time[10];
-	std::string config[5];
+	std::string config[6];
 	int length;
 
 public:
@@ -34,4 +34,6 @@ public:
 	int loop_count();
 
 	void save_time();
+
+	void sort();
 };

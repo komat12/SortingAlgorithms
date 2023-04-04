@@ -1,10 +1,13 @@
 liczby.txt
 output.txt
-5
+1
 timeoutput.txt
-20000
-input file
-output file
-loop count (max 10)
-time output file
-numbers sorted
+10
+count
+
+1. input file
+2. output file
+3. loop count (max 10)
+4. time output file
+5. numbers sorted
+6. sorting method

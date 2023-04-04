@@ -38,7 +38,7 @@ void Object::configuration()
 
     file.open("config.txt", std::ios::in);
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 6; i++)
     {
         std::getline(file, config[i]);
         std::cout << config[i] << std::endl;
@@ -162,4 +162,25 @@ void Object::save_time()
     }
 
     out.close();
+}
+
+void Object::sort()
+{
+    for (int i = 0; i < stoi(config[2]); i++)
+    {
+        this->input();
+        if(config[5] == "bubble")
+        {
+            this->solve_bouble();
+        }
+        if(config[5] == "quick")
+        {
+            this->solve_quick();
+        }
+        if(config[5] == "count")
+        {
+            this->solve_count();
+        }
+        this->save();
+    }
 }
